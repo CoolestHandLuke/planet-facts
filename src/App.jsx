@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Planet from './components/Planet';
 
 function App() {
     // Navbar stickied to the top. Changes based on media queries
@@ -14,6 +15,7 @@ function App() {
     return (
         <div className="bg-background-black h-screen">
             <Navbar />
+            <Planet />
         </div>
     );
 }

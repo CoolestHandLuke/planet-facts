@@ -35,3 +35,8 @@
     font-size: 14px;
     line-height: 25px;
 }
+
+/* Needed to overwrite some behavior coming from DaisyUI, I think */
+.btn:focus-visible {
+    outline-style: none;
+}
