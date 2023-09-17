@@ -14,21 +14,21 @@
     font-weight: 500;
     font-size: 40px;
     line-height: 52px;
-    /* letter-spacing: -1.5rem; */
+    letter-spacing: -1.5px;
 }
 .spartan-h3 {
     font-family: 'League Spartan';
     font-weight: 700;
     font-size: 12px;
     line-height: 25px;
-    /* letter-spacing: 2.6rem; */
+    letter-spacing: 2.6px;
 }
 .spartan-h4 {
     font-family: 'League Spartan';
     font-weight: 700;
     font-size: 11px;
     line-height: 25px;
-    /* letter-spacing: 1rem; */
+    letter-spacing: 1px;
 }
 .spartan-body {
     font-family: 'League Spartan';

@@ -2,27 +2,32 @@
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
-        colors: {
-            white: '#FFFFFF',
-            'background-black': '#070724',
-            'dark-grey': '#38384F',
-            'light-grey': '#838391',
-            'light-blue': '#419EBB',
-            'dark-yellow': '#EDA249',
-            purple: '#6F2ED6',
-            'dull-orange': '#D14C32',
-            red: '#D83A34',
-            'dirty-orange': '#CD5120',
-            'sea-green': '#1EC2A4',
-            'light-blue': '#2D68F0',
-        },
-
         extend: {
             fontFamily: {
                 antonio: ['Antonio'],
                 spartan: ['"League Spartan"'],
             },
+            colors: {
+                white: '#FFFFFF',
+                'background-black': '#070724',
+                'dark-grey': '#38384F',
+                'light-grey': '#838391',
+                ['mercury']: '#419EBB',
+                ['venus']: '#EDA249',
+                ['earth']: '#6F2ED6',
+                ['mars']: '#D14C32',
+                ['jupiter']: '#D83A34',
+                ['saturn']: '#CD5120',
+                ['uranus']: '#1EC2A4',
+                ['neptune']: '#2D68F0',
+            },
         },
     },
     plugins: [require('daisyui')],
+    safelist: [
+        {
+            pattern:
+                /(bg|text|border)-(background-black|dark-grey|light-grey|mercury|venus|earth|mars|jupiter|saturn|uranus|neptune)/,
+        },
+    ],
 };
