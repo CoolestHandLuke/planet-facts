@@ -21,6 +21,9 @@ export default {
                 ['uranus']: '#1EC2A4',
                 ['neptune']: '#2D68F0',
             },
+            backgroundImage: {
+                'stars-background': "url('../../assets/background-stars.svg')",
+            },
         },
     },
     plugins: [require('daisyui')],

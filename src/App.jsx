@@ -13,7 +13,7 @@ function App() {
     // Also need to make a mobile menu containing menu-planet components
 
     return (
-        <div className="bg-background-black h-screen">
+        <div className=" bg-background-black bg-stars-background h-full">
             <Navbar />
             <Planet />
         </div>

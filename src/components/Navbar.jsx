@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import hamburgerIcon from '../../assets/icon-hamburger.svg';
 
 import PlanetsList from './PlanetsList';
 
@@ -23,19 +24,7 @@ const Navbar = () => {
                             onClick={onClick}
                             className="btn btn-square btn-ghost color-white"
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                className="inline-block w-6 h-6 stroke-current text-white active:text-dark-grey"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                ></path>
-                            </svg>
+                            <img src={hamburgerIcon} alt="Hamburger button" />
                         </button>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import { planets } from '../../data';
-import { GoChevronRight } from 'react-icons/go';
+import chevronRight from '../../assets/icon-chevron.svg';
 
 const PlanetsList = () => {
     return (
@@ -20,7 +20,7 @@ const PlanetsList = () => {
                             </div>
                         </div>
                         <div className="flex-0 m-auto">
-                            <GoChevronRight />
+                            <img src={chevronRight} alt="Chevron Right" />
                         </div>
                     </div>
                 );
