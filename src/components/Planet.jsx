@@ -10,6 +10,7 @@ const Planet = () => {
     if (planetsListOpen) {
         return;
     }
+
     return (
         <div>
             <ButtonsContainer />

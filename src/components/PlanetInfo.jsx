@@ -1,18 +1,24 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import source from '../../assets/icon-source.svg';
 import PlanetsContext from '../context/PlanetsContext';
 
 const PlanetInfo = () => {
-    const { currentPlanet, isLoading, setIsLoading, planetName } =
+    const { currentPlanet, isLoading, setIsLoading, selectedBtn } =
         useContext(PlanetsContext);
 
     // console.log(currentPlanet);
+    useEffect(() => {
+        setIsLoading(true);
+        console.log(selectedBtn);
+        setIsLoading(false);
+    }, [selectedBtn]);
 
     if (isLoading) {
         return <h1>Fucking loading</h1>;
     }
 
-    const { name, overview, geology } = currentPlanet;
+    const { name, overview, structure, geology } = currentPlanet;
+    console.log(currentPlanet);
 
     return (
         <div className="flex flex-col">
@@ -20,7 +26,11 @@ const PlanetInfo = () => {
                 {name}
             </div>
             <p className="m-auto w-11/12 spartan-body text-center text-white">
-                {overview.content}
+                {selectedBtn === 'overview'
+                    ? overview.content
+                    : selectedBtn === 'geology'
+                    ? structure.content
+                    : geology.content}
             </p>
             <div className="flex flex-row justify-center ">
                 <div className="spartan-body text-center align-middle">

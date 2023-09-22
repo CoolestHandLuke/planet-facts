@@ -15,7 +15,7 @@ const PlanetsList = () => {
                         <div
                             key={index}
                             onClick={() => handlePlanetChange(name)}
-                            className="flex h-16 mx-auto w-11/12"
+                            className="flex h-16 mx-auto w-11/12 hover:cursor-pointer"
                         >
                             <div className="flex-1 m-auto">
                                 <div className="inline-flex">

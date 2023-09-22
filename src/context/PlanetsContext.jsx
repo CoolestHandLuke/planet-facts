@@ -7,8 +7,7 @@ export const PlanetsProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [currentPlanet, setCurrentPlanet] = useState(planets[2]); // Earth
     const [planetsListOpen, setPlanetsListOpen] = useState(false);
-
-    // Navbar planets list
+    const [selectedBtn, setSelectedBtn] = useState('overview'); // Default view
 
     const togglePlanetsList = () => {
         setPlanetsListOpen((prevState) => !prevState);
@@ -25,6 +24,10 @@ export const PlanetsProvider = ({ children }) => {
         });
     };
 
+    const handleBtn = (e) => {
+        setSelectedBtn(e.target.id);
+    };
+
     return (
         <PlanetsContext.Provider
             value={{
@@ -32,9 +35,10 @@ export const PlanetsProvider = ({ children }) => {
                 handlePlanetChange,
                 isLoading,
                 setIsLoading,
-
                 planetsListOpen,
                 togglePlanetsList,
+                selectedBtn,
+                handleBtn,
             }}
         >
             {children}
