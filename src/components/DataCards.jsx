@@ -1,32 +1,17 @@
-import { useState, useEffect } from 'react';
-import { planets } from '../../data';
+import { useState, useEffect, useContext } from 'react';
+import PlanetsContext from '../context/PlanetsContext';
 
-const DataCards = ({ planetName }) => {
+const DataCards = () => {
     // TODO: Refactor to Context so we don't have to keep doing this state bullshit
+    const {
+        isLoading,
+        currentPlanet: { radius, revolution, rotation, temperature },
+    } = useContext(PlanetsContext);
 
-    const [currentPlanet, setCurrentPlanet] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const loadPlanetInfo = () => {
-            setLoading(true);
-            planets.map((planet) => {
-                if (planet.name === planetName) {
-                    setCurrentPlanet(planet);
-                    setLoading(false);
-                }
-            });
-        };
-
-        loadPlanetInfo();
-    }, []);
-    console.log(currentPlanet);
-
-    if (loading) {
+    if (isLoading) {
         return <h1>Fucking loading</h1>;
     }
 
-    const { radius, revolution, rotation, temperature } = currentPlanet;
     return (
         <>
             <div className="flex m-auto mb-5 px-8 border-2 border-light-grey w-11/12 h-16">

@@ -1,13 +1,18 @@
-import planetMercury from '../../assets/planet-mercury.svg';
+import { useContext } from 'react';
+import PlanetsContext from '../context/PlanetsContext';
 
 const PlanetImg = () => {
+    const { currentPlanet } = useContext(PlanetsContext);
+
     return (
-        <div className="h-fit flex">
-            <img
-                className="mx-auto mt-56 mb-10 h-[111px] w-[111px]"
-                src={planetMercury}
-                alt="a planet"
-            />
+        <div className="mx-auto ">
+            <div className="m-auto max-w-[290px] h-auto">
+                <img
+                    className="object-cover"
+                    src={currentPlanet.images.planet}
+                    alt="a planet"
+                />
+            </div>
         </div>
     );
 };

@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import hamburgerIcon from '../../assets/icon-hamburger.svg';
-
 import PlanetsList from './PlanetsList';
+import PlanetsContext from '../context/PlanetsContext';
 
 const Navbar = () => {
-    const [btnClicked, setBtnClicked] = useState(false);
+    const { togglePlanetsList, planetsListOpen } = useContext(PlanetsContext);
 
     const onClick = () => {
-        setBtnClicked((prevState) => !prevState);
+        togglePlanetsList();
     };
 
     return (
         <>
             <div className={'navbar px-0 border-b-2 border-dark-grey'}>
-                <div className="m-auto w-11/12">
+                <div className="m-auto w-screen">
                     <div className="flex-1">
                         <h2 className="antonio-h2 uppercase text-white">
                             The Planets
@@ -29,7 +29,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            {btnClicked && <PlanetsList />}
+            {planetsListOpen && <PlanetsList />}
         </>
     );
 };

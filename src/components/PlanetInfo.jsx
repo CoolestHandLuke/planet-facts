@@ -1,27 +1,14 @@
-import { useEffect, useState } from 'react';
-import { planets } from '../../data';
+import { useContext } from 'react';
 import source from '../../assets/icon-source.svg';
+import PlanetsContext from '../context/PlanetsContext';
 
-const PlanetInfo = ({ planetName }) => {
-    const [currentPlanet, setCurrentPlanet] = useState(null);
-    const [loading, setLoading] = useState(true);
+const PlanetInfo = () => {
+    const { currentPlanet, isLoading, setIsLoading, planetName } =
+        useContext(PlanetsContext);
 
-    useEffect(() => {
-        const loadPlanetInfo = () => {
-            setLoading(true);
-            planets.map((planet) => {
-                if (planet.name === planetName) {
-                    setCurrentPlanet(planet);
-                    setLoading(false);
-                }
-            });
-        };
-
-        loadPlanetInfo();
-    }, []);
     // console.log(currentPlanet);
 
-    if (loading) {
+    if (isLoading) {
         return <h1>Fucking loading</h1>;
     }
 

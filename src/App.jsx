@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Planet from './components/Planet';
+import { PlanetsProvider } from './context/PlanetsContext';
 
 function App() {
     // Navbar stickied to the top. Changes based on media queries
@@ -13,10 +14,12 @@ function App() {
     // Also need to make a mobile menu containing menu-planet components
 
     return (
-        <div className=" bg-background-black bg-stars-background h-full">
-            <Navbar />
-            <Planet />
-        </div>
+        <PlanetsProvider>
+            <div className="mx-auto bg-background-black bg-stars-background h-full">
+                <Navbar />
+                <Planet />
+            </div>
+        </PlanetsProvider>
     );
 }
 
